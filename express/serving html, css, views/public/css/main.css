@@ -1,0 +1,106 @@
+/* main.css */
+
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+}
+
+.headerDiv {
+  background-color: #3498db;
+  color: white;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+.header_home {
+  margin: 20px 0;
+}
+
+/* styles.css */
+
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+}
+
+.headerDiv {
+  background-color: #3498db;
+  color: white;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+main {
+  text-align: center;
+  margin-top: 50px;
+}
+
+h1 {
+  color: #2ecc71;
+}
+
+.contact_div {
+  text-align: center;
+  margin-top: 50px;
+}
+
+h1 {
+  color: #2ecc71;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: auto;
+}
+
+input {
+  margin: 10px 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #2ecc71;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #27ae60;
+}
