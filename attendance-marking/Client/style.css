@@ -1,0 +1,26 @@
+* {
+  padding: 5px;
+}
+
+#attendanceForm {
+  display: flex;
+}
+
+.head {
+  display: flex;
+  height: 100px;
+}
+.fetch {
+  height: 40px;
+  margin-top: auto;
+  margin-left: 50%;
+  background-color: greenyellow;
+}
+
+.label {
+  background-color: rgb(122, 219, 31);
+  font-style: italic;
+}
+.expenseDiv {
+  background-color: #e4e9e5d8;
+}
