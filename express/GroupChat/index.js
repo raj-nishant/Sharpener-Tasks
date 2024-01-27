@@ -7,14 +7,14 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // for login page
-app.use("/login", (req, res, next) => {
+app.get("/", (req, res, next) => {
   res.send(`
     <html>
       <head>
         <title>Login Page</title>
       </head>
       <body>
-        <form onsubmit="localStorage.setItem('loginUsr', document.getElementById('loginUsr').value)" action="/">
+        <form onsubmit="localStorage.setItem('loginUsr', document.getElementById('loginUsr').value)" action="/home">
           <input id="loginUsr" type="text" placeholder="Enter your Login Id"/>
           <button type="submit">Login</button>
         </form>
@@ -23,25 +23,8 @@ app.use("/login", (req, res, next) => {
     `);
 });
 
-// for msg redirect request
-app.post("/message", (req, res, next) => {
-  res.statusCode = 302;
-  fs.appendFile(
-    "msg.txt",
-    "__" + `${req.body.usr}:${req.body.msg}`,
-    "utf8",
-    (err) => {
-      if (err) {
-        console.log(err);
-      } else {
-        res.redirect("/");
-      }
-    }
-  );
-});
-
 // for home page
-app.get("/", (req, res, next) => {
+app.get("/home", (req, res, next) => {
   var all_msg = "";
   fs.readFile("msg.txt", "utf8", (err, data) => {
     if (err) {
@@ -72,7 +55,24 @@ app.get("/", (req, res, next) => {
   });
 });
 
+// for msg redirect request
+app.post("/message", (req, res, next) => {
+  res.statusCode = 302;
+  fs.appendFile(
+    "msg.txt",
+    "__" + `${req.body.usr}:${req.body.msg}`,
+    "utf8",
+    (err) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.redirect("/home");
+      }
+    }
+  );
+});
+
 const port = 3000;
-server.listen(port, () => {
+app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
 });
